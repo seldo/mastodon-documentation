@@ -2,25 +2,12 @@
 @import 'roboto.scss';
 @import 'roboto-mono.scss';
 
-/*
-$white:    #fff   ; // color5
-$lightest: #d9e1e8; // color2
-$lighter:  #9baec8; // color3
-$darkest:  #1F232B; // color1
-$black:    #000   ; // color8
-$darker:   lighten($darkest, 34%);
-
-$vibrant:  #2b90d9; // color4
-$error:    #df405a; // color6
-$success:  #79bd9a; // color7
-*/
-
-$white:    #000   ; // color5
+$white:    #000; // color5
 $lightest: #666; // color2
 $lighter:  #999; // color3
 $darker:   #aaa;
 $darkest:  #ccc; // color1
-$black:    #fff   ; // color8
+$black:    #fff; // color8
 
 $vibrant:  #2b90d9; // color4
 $error:    #df405a; // color6
