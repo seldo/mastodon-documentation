@@ -1,4 +1,4 @@
-baseURL = "https://docs.joinmastodon.org/"
+baseURL = "https://mastodon-docs.netlify.app/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Mastodon documentation"
