@@ -37,10 +37,10 @@ Many API methods allow you to paginate for more information, using parameters su
 To get around this, Mastodon may return links to a "prev" and "next" page. These links are made available via the HTTP `Link` header on the response. Consider the following fictitious API call:
 
 ```http
-GET https://mastodon.social/api/v1/endpoint HTTP/1.1
+GET https://mastodon.example/api/v1/endpoint HTTP/1.1
 Authorization: Bearer token
 
-Link: <https://mastodon.social/api/v1/endpoint?max_id=7163058>; rel="next", <https://mastodon.social/api/v1/endpoint?since_id=7275607>; rel="prev"
+Link: <https://mastodon.example/api/v1/endpoint?max_id=7163058>; rel="next", <https://mastodon.example/api/v1/endpoint?since_id=7275607>; rel="prev"
 [
   {
     // some Entity
@@ -131,4 +131,4 @@ Please check `app/javascript/mastodon/selectors/index.js` and `app/lib/feed_mana
 
 Server-side preview images are never cropped, to support a variety of apps and user interfaces. Therefore, the cropping must be done by those apps. To crop intelligently, focal points can be used to ensure a certain section of the image is always within the cropped viewport. See this [guide on how focal points are defined](https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point). In summary, floating points range from -1.0 to 1.0, left-to-right or bottom-to-top. (0,0) is the center of the image. (0.5, 0.5) would be in the center of the upper-right quadrant. (-0.5, -0.5) would be in the center of the lower-left quadrant. For reference, thumbnails in the Mastodon frontend are most commonly 16:9.
 
-{{< figure src="/assets/focal-points.jpg" caption="A demonstration of various focal points and their coordinates." >}}
+{{< figure src="assets/focal-points.jpg" caption="A demonstration of various focal points and their coordinates." >}}
