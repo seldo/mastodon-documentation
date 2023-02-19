@@ -33,7 +33,7 @@ Flag
 : Transformed into a report to the moderation team.
 
 Update
-: Refresh vote count on polls. As of Mastodon 3.5.0: edit statuses.
+: Refresh vote count on polls. As of Mastodon 3.5.0, can be used to edit statuses when the `updated` timestamp is present.
 
 Undo
 : Undo a previous Like or Announce.
@@ -81,6 +81,9 @@ url
 
 attributedTo
 : Used to determine the profile which authored the status
+
+updated
+: Used to display the "last edited at" timestamp in the UI to indicate to the user that a status has been edited. Required before an Update activity will be processed. To prevent against race conditions, Mastodon will only process Update payloads with an `updated` timestamp greater than the currently known last `updated` time.
 
 to/cc
 : Used to determine audience and visibility of a status.
@@ -218,7 +221,7 @@ published
 
 ## HTML sanitization {#sanitization}
 
-{{< caption-link url="https://github.com/mastodon/mastodon/blob/master/app/lib/sanitize_config.rb" caption="app/lib/sanitize_config.rb" >}}
+{{< caption-link url="https://github.com/mastodon/mastodon/blob/main/lib/sanitize_ext/sanitize_config.rb" caption="lib/sanitize_ext/sanitize_config.rb" >}}
 
  Mastodon sanitizes incoming HTML in order to not break assumptions for API client developers. Supported elements include `<p>`, `<span>`, `<br>`, and `<a>`. Unsupported elements will be converted to `<p>`.The sanitizer will keep classes if they begin with microformats prefixes or are semantic classes:
 
